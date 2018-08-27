@@ -108,6 +108,9 @@ class PagesDataRowsTableSeeder extends Seeder
                     'slugify' => [
                         'origin' => 'title',
                     ],
+                    'validation' => [
+                        'rule'  => 'unique:pages,slug',
+                    ],
                 ]),
                 'order' => 6,
             ])->save();
@@ -126,22 +129,6 @@ class PagesDataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'details'      => '',
                 'order'        => 7,
-            ])->save();
-        }
-
-        $dataRow = $this->dataRow($pageDataType, 'meta_keywords');
-        if (!$dataRow->exists) {
-            $dataRow->fill([
-                'type'         => 'text',
-                'display_name' => 'meta_keywords',
-                'required'     => 1,
-                'browse'       => 0,
-                'read'         => 1,
-                'edit'         => 1,
-                'add'          => 1,
-                'delete'       => 1,
-                'details'      => '',
-                'order'        => 8,
             ])->save();
         }
 
