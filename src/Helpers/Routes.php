@@ -20,6 +20,11 @@ class Routes
             return;
         }
 
+        // Config setting to disable voyager-pages routes completely
+        if(config('voyager-pages.disable_routes', false) === true) {
+            return;
+        }
+
         // Which Page Controller shall we use to display the page? Page Blocks or standard page?
         $pageController = '\Pvtl\VoyagerPages\Http\Controllers\PageController';
 

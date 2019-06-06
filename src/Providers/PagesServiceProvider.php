@@ -49,6 +49,9 @@ class PagesServiceProvider extends ServiceProvider
     protected function strapPublishers()
     {
         // Defines which files to copy the root project
+        $this->publishes([
+            self::PACKAGE_DIR . 'config' => base_path('config'),
+        ]);
     }
 
     /**
