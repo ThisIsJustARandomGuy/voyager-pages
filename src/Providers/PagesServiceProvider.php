@@ -27,15 +27,6 @@ class PagesServiceProvider extends ServiceProvider
     }
 
     /**
-     * Register the application services.
-     *
-     * @return void
-     */
-    public function register()
-    {
-    }
-
-    /**
      * Bootstrap our Routes
      */
     protected function strapRoutes()
@@ -70,11 +61,6 @@ class PagesServiceProvider extends ServiceProvider
     {
         // Load migrations
         $this->loadMigrationsFrom(self::PACKAGE_DIR . 'database/migrations');
-
-        // Locate our factories for testing
-        $this->app->make('Illuminate\Database\Eloquent\Factory')->load(
-            self::PACKAGE_DIR . 'database/factories'
-        );
     }
 
     /**
